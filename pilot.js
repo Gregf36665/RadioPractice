@@ -9,7 +9,7 @@ var rules=false;
 var emergency=false;
 var out=[];
 var din="";
-var order=[1,0,2,3,0];
+var order=[1,0,2,3];
 
 //order
 /*  0 = callsign
@@ -120,17 +120,19 @@ if(sign && station && request){
 				din+="Request Departure   ";
 				break;
 			case "FREQUENCYCHANGE":
-				din+="Request Frequency Change   ";
+				din+="Request Frequency Change to Approach 1 1 niner point 2 7 5";
+				order = []; // this stops anything else from being said
 				break;
 			case "FIRSTCONTACT":
 				din+="";
 				order = []; // this stops anything else from being said
 				break;
-			case "EMERGENCY":
-				din+="mayday mayday mayday";
+			case "PASSMESSAGE":
+				din+="is a Cessna Sky Hawk from Allentown to November 8 7 currently 1500 feet altimeter 2 niner niner 2 squawking 1 2 0 0 ";
 				break;
 			case "REJOIN":
 				din+="Request Rejoin   ";
+				order = []; // this stops anything else from being said
 				break;
 			case "FINALS":
 				din+="Finals for Runway two four left ";
@@ -142,14 +144,14 @@ if(sign && station && request){
 				din+="Down Wind to land runway zero niner ";
 				break;
 			case "VFR":
-				din+="VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end
+				din+="for VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end
 				// replace this with a changing name such as another staton
 				break;
 			case "IFR":
-				din+="IFR flight to Kilo Sierra Bravo Delta ";
+				din+="for IFR flight to Kilo Sierra Bravo Delta ";
 				break;
 			case "LOCAL":
-				din+="local flight ";
+				din+="for local flight ";
 				break;
 			}
 		}
