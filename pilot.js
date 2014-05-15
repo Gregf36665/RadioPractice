@@ -127,7 +127,7 @@ if(sign && station && request){
 				din+="";
 				order = []; // this stops anything else from being said
 				break;
-			case "PASSMESSAGE";
+			case "PASSMESSAGE":
 				din+="is a Cessina Sky Hawk from Allentown to N 8 7 currently 1500 feet altimeter 2992 squawking 1 2 0 0.";
 				break;
 			case "REJOIN":
