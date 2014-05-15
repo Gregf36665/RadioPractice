@@ -33,7 +33,7 @@ for(var i=0;i<choice.station.length; i++){
 		out.push(choice.station[i].value);
 		station=true;
 		}
-	}
+	}if(!station) out.push("UNICOM");
 
 for(var i=0;i<choice.request.length; i++){
 	if(choice.request[i].checked){
@@ -85,38 +85,38 @@ if(sign && station && request){
 				
 		// stations
 			case "TOWER":
-				din+="Allentown Tower ";
+				din+="Seattle Tower ";
 				break;
 			case "APPROACH":
-				din+="Allentown Approach ";
+				din+="Seattle Approach ";
 				break;
 			case "UNICOM":
-				din+="Allentown Unicom ";
+				din+="Seattle Unicom ";
 				break;
 			case "RADIO":
-				din+="Allentown Radio   ";
+				din+="Seattle Radio   ";
 				break;
 			case "FLIGHTWATCH":
-				din+="Allentown Flight Watch   ";
+				din+="Seattle Flight Watch   ";
 				break;
 			case "CLEARANCEDELIVERY":
-				din+="Allentown Clearance Delivery   ";
+				din+="Seattle Clearance Delivery   ";
 				break;
 			case "GROUND":
-				din+="Allentown Ground   ";
+				din+="Seattle Ground   ";
 				break;
 			case "CENTER":
-				din+="Allentown Center   ";
+				din+="Seattle Center   ";
 				break;
-			case "DEPARTURESTATION":
-				din+="Allentown Departure   ";
+			case "DEPARTURE":
+				din+="Seattle Departure   ";
 				break;
 				
 		// requests 
 			case "TAXI":
 				din+="Request Taxi   ";
 				break;
-			case "DEPARTUREREQUEST":
+			case "DEPARTURE":
 				din+="Request Departure   ";
 				break;
 			case "FREQUENCYCHANGE":
@@ -183,7 +183,7 @@ var rules=false;
 var emergency=false;
 var out=[];
 var din="";
-var order=[0,1,2,3];
+var order=[1,0,2,3,0];
 
 //order
   0 = callsign
@@ -229,7 +229,7 @@ for(var i=0;i<choice.emergency.length; i++){
 		out.push(choice.emergency[i].value);
 		emergency=true;
 		request = true; // emergencies count as requests
-		order = [5,0,1,4];
+		order = [5,1,0,4];
 		}
 	}if(!emergency) out.push("");
 
@@ -240,13 +240,13 @@ if(sign && station && request){
 		switch(out[order[j]].toUpperCase()){
 		// emergencies
 			case "SOS":
-				din+="All other stations stand by ";
+				din+="mayday mayday mayday ";
 				break;
 			case "ENGINE":
-				din+="Forced landing acknowledged";
+				din+="Engine failure commencing forced landing ";
 				break;
 			case "RADIOFAIL":
-				din+="Return to November 8 7 acknowledged";
+				din+="Radio failure returning to November 8 7";
 				break;
 					
 		// callsigns
@@ -259,53 +259,52 @@ if(sign && station && request){
 				
 		// stations
 			case "TOWER":
-				din+="Allentown Tower ";
+				din+="Seattle Tower ";
 				break;
 			case "APPROACH":
-				din+="Allentown Approach ";
+				din+="Seattle Approach ";
 				break;
 			case "UNICOM":
-				din+="Allentown Unicom ";
+				din+="Seattle Unicom ";
 				break;
 			case "RADIO":
-				din+="Allentown Radio   ";
+				din+="Seattle Radio   ";
 				break;
 			case "FLIGHTWATCH":
-				din+="Allentown Flight Watch  ";
+				din+="Seattle Flight Watch   ";
 				break;
 			case "CLEARANCEDELIVERY":
-				din+="Allentown Clearance Delivery   ";
+				din+="Seattle Clearance Delivery   ";
 				break;
 			case "GROUND":
-				din+="Allentown Ground   ";
+				din+="Seattle Ground   ";
 				break;
 			case "CENTER":
-				din+="Allentown Center   ";
+				din+="Seattle Center   ";
 				break;
-			case "DEPARTURESTATION":
-				din+="Allentown Departure   ";
+			case "DEPARTURE":
+				din+="Seattle Departure   ";
 				break;
 				
 		// requests 
 			case "TAXI":
-				din+="Taxi to Alpha 1 via Bravo ";
+				din+="Request Taxi   ";
 				break;
-			case "DEPARTUREREQUEST":
-				din+="Cleared to takeoff Runway 2 4 ";
+			case "DEPARTURE":
+				din+="Request Departure   ";
 				break;
 			case "FREQUENCYCHANGE":
-				din+="Frequency change approved ";
+				din+="Request Frequency Change   ";
 				break;
 			case "FIRSTCONTACT":
-				din+="Pass your message ";
+				din+="";
+				order = []; // this stops anything else from being said
 				break;
 			case "EMERGENCY":
 				din+="mayday mayday mayday";
 				break;
 			case "REJOIN":
-				din+=" is using runway 2 4 left hand circuit\
-				There is one Sky hawk in the circuit currently short finals\
-				Join overhead."; // the newlines are just for formatting the code
+				din+="Request Rejoin   ";
 				break;
 			case "FINALS":
 				din+="Finals for Runway two four left ";
@@ -314,7 +313,17 @@ if(sign && station && request){
 				din+="Base for Runway three four right  ";
 				break;
 			case "DOWNWIND":
-				din+="Report finals ";
+				din+="Down Wind to land runway zero niner ";
+				break;
+			case "VFR":
+				din+="VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end
+				// replace this with a changing name such as another staton
+				break;
+			case "IFR":
+				din+="IFR flight to Kilo Sierra Bravo Delta ";
+				break;
+			case "LOCAL":
+				din+="local flight ";
 				break;
 			}
 		}
