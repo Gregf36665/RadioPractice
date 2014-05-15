@@ -6,7 +6,7 @@ var station=false;
 var request=false;
 var out=[];
 var din="";
-var order=[1,0,2,0];
+var order=[1,0,2,3,0];
 
 for(var i=0;i<choice.callsign.length; i++){
     if(choice.callsign[i].checked){
@@ -28,7 +28,12 @@ for(var i=0;i<choice.request.length; i++){
 		request=true;
 		}
 	}
-			
+
+for(var i=0;i<choice.rules.length; i++){
+	if(choice.rules[i].checked){
+		out.push(choice.rules[i].value);
+		}
+	}			
 if(sign && station && request){
 for(j=0;j<order.length;j++){
 switch(out[order[j]].toUpperCase()){
@@ -91,6 +96,10 @@ case "BASE":
 	break;
 case "DOWNWIND":
 	din+="Request Down Wind for ";
+	break;
+case "VFR":
+	din+="VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end replace this
+	//with a changing name such as another staton
 	break;
 }}
 alert(din); // this is for debugging to see what will get said
