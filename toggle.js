@@ -35,8 +35,8 @@ switch(out[order[j]].toUpperCase()){
 case "N410T":
 	din+="November Four One Zero Tango ";
 	break;
-case "GBFYA":
-	din+="Golf Bravo Foxtrot Yankee Alpha ";
+case "GBYFA":
+	din+="Golf Bravo Yankee Foxtrot Alpha ";
 	break;
 case "TOWER":
 	din+="Seattle Tower ";
@@ -90,7 +90,7 @@ case "BASE":
 	din+="Request Base for ";
 	break;
 case "DOWNWIND":
-	din+="Request Downwind for ";
+	din+="Request Down Wind for ";
 	break;
 }}
 var msg = new SpeechSynthesisUtterance();
