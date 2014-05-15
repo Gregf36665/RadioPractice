@@ -36,8 +36,8 @@ for(var i=0;i<choice.rules.length; i++){
 		out.push(choice.rules[i].value);
 		rules=true;
 		}
-	else{out.push("")};
-	}			
+	}if(!rules) out.push("");
+				
 if(sign && station && request){
 for(j=0;j<order.length;j++){
 switch(out[order[j]].toUpperCase()){
@@ -104,6 +104,12 @@ case "DOWNWIND":
 case "VFR":
 	din+="VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end replace this
 	//with a changing name such as another staton
+	break;
+case "IFR":
+	din+="IFR flight to Kilo Sierra Bravo Delta ";
+	break;
+case "LOCAL":
+	din+="local flight ";
 	break;
 }}
 alert(din); // this is for debugging to see what will get said
