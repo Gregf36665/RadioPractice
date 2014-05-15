@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 var fast=function(mOrder){
-=======
-var pilot=function(){
 
->>>>>>> FETCH_HEAD
 var selected=true;
 var choice = document.choice; //simplify the code
 var sign=false;
@@ -176,7 +172,7 @@ else {alert("You didn't select them all");}
 
 // What if we want ATCs response?
 
-var ATC=function(){
+/*var ATC=function(){
 
 var selected=true;
 var choice = document.choice; //simplify the code
@@ -190,7 +186,7 @@ var din="";
 var order=[0,1,2,3];
 
 //order
-/*  0 = callsign
+  0 = callsign
 	1 = station
 	2 = request
 	3 = flight rules
