@@ -121,6 +121,7 @@ if(sign && station && request){
 				break;
 			case "FREQUENCYCHANGE":
 				din+="Request Frequency Change to Approach 1 1 niner point 2 7 5";
+				order = []; // this stops anything else from being said
 				break;
 			case "FIRSTCONTACT":
 				din+="";
@@ -128,6 +129,7 @@ if(sign && station && request){
 				break;
 			case "REJOIN":
 				din+="Request Rejoin   ";
+				order = []; // this stops anything else from being said
 				break;
 			case "FINALS":
 				din+="Finals for Runway two four left ";
