@@ -4,6 +4,7 @@ var choice = document.choice; //simplify the code
 var sign=false;
 var station=false;
 var request=false;
+var rules=false;
 var out=[];
 var din="";
 var order=[1,0,2,3,0];
@@ -29,10 +30,13 @@ for(var i=0;i<choice.request.length; i++){
 		}
 	}
 
+
 for(var i=0;i<choice.rules.length; i++){
 	if(choice.rules[i].checked){
 		out.push(choice.rules[i].value);
+		rules=true;
 		}
+	else{out.push("")};
 	}			
 if(sign && station && request){
 for(j=0;j<order.length;j++){
