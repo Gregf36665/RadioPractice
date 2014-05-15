@@ -2,6 +2,8 @@
 <html>
 	<head>
 	<script type="text/javascript" src="toggle.js"></script>
+	<script type="text/javascript" src="trafcon.js"></script>
+	<script type="text/javascript" src="pcon.js"></script>
 	</head>
 <body>
 
@@ -11,7 +13,7 @@
 		<td><b>Station </b></td>
 		<td><b>Request</b></td>
 		<td><b>Flight Rules</b></td>
-		<td><input type="submit" onclick="fast()" value = "Transmit"/></td>
+		<td><input type="submit" onclick="trafcon()" value = "Transmit Control"/></td>
 	</tr>
 	<form name="choice">
 	<tr>
@@ -30,6 +32,7 @@
 		<td>
 		<input type="radio" name="rules" value="VFR">VFR
 		</td>
+		<td><input type="submit" onclick="pcon()" value = "Transmit Pilot"/></td>
 	</tr>
 	<tr>
 		<td>
@@ -47,6 +50,7 @@
 		<td>
 		<input type="radio" name="rules" value="IFR">IFR
 		</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -60,6 +64,7 @@
 		<td>
 		<input type="radio" name="rules" value="Local">Local Flight
 		</td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -69,6 +74,8 @@
 		<td>
 		<input type="radio" name="request" value="FirstContact">First Contact
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -78,6 +85,8 @@
 		<td>
 		<input type="radio" name="request" value="Emergency">Emergency
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -87,6 +96,8 @@
 		<td>
 		<input type="radio" name="request" value="Rejoin">Rejoin
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -96,6 +107,8 @@
 		<td>
 		<input type="radio" name="request" value="Finals">Finals
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -105,6 +118,8 @@
 		<td>
 		<input type="radio" name="request" value="Base">Base
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	<tr>
 		<td></td>
@@ -114,6 +129,8 @@
 		<td>
 		<input type="radio" name="request" value="Downwind">Downwind
 		</td>
+		<td></td>
+		<td></td>
 	</tr>
 	</form>
 </table>

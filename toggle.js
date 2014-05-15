@@ -1,4 +1,4 @@
-var fast=function(){
+var fast=function(mOrder){
 var selected=true;
 var choice = document.choice; //simplify the code
 var sign=false;
@@ -7,7 +7,7 @@ var request=false;
 var rules=false;
 var out=[];
 var din="";
-var order=[1,0,2,3,0];
+var order=mOrder;
 
 for(var i=0;i<choice.callsign.length; i++){
     if(choice.callsign[i].checked){
@@ -120,5 +120,4 @@ msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
 else {alert("You didn't select them all");}
-
 };
