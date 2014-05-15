@@ -10,6 +10,7 @@
 		<td><b>Call sign</b></td>
 		<td><b>Station </b></td>
 		<td><b>Request</b></td>
+		<td><b>Flight Rules</b></td>
 		<td><input type="submit" onclick="fast()" value = "Transmit"/></td>
 	</tr>
 	<form name="choice">
@@ -25,6 +26,10 @@
 		<td>
 		<input type="radio" name="request" value="Taxi">Taxi
 		</td>
+		
+		<td>
+		<input type="radio" name="rules" value="VFR">VFR
+		</td>
 	</tr>
 	<tr>
 		<td>
@@ -38,6 +43,10 @@
 		<td>
 		<input type="radio" name="request" value="Departure">Departure
 		</td>
+		
+		<td>
+		<input type="radio" name="rules" value="IFR">IFR
+		</td>
 	</tr>
 	<tr>
 		<td></td>
@@ -46,6 +55,10 @@
 		</td>
 		<td>
 		<input type="radio" name="request" value="FrequencyChange">Frequency Change
+		</td>
+		
+		<td>
+		<input type="radio" name="rules" value="Local">Local Flight
 		</td>
 	</tr>
 	<tr>
@@ -57,7 +70,7 @@
 		<input type="radio" name="request" value="FirstContact">First Contact
 		</td>
 	</tr>
-		<tr>
+	<tr>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="FlightWatch">Flight Watch
@@ -66,7 +79,7 @@
 		<input type="radio" name="request" value="Emergency">Emergency
 		</td>
 	</tr>
-		<tr>
+	<tr>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="ClearanceDelivery">Clearance Delivery
@@ -75,7 +88,7 @@
 		<input type="radio" name="request" value="Rejoin">Rejoin
 		</td>
 	</tr>
-		<tr>
+	<tr>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="Ground">Ground
@@ -84,7 +97,7 @@
 		<input type="radio" name="request" value="Finals">Finals
 		</td>
 	</tr>
-		<tr>
+	<tr>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="Center">Center
@@ -93,7 +106,7 @@
 		<input type="radio" name="request" value="Base">Base
 		</td>
 	</tr>
-		<tr>
+	<tr>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="Departure">Departure
