@@ -2,8 +2,8 @@
 <html>
 	<head>
 	<script type="text/javascript" src="toggle.js"></script>
-	<script type="text/javascript" src="trafcon.js"></script>
-	<script type="text/javascript" src="pcon.js"></script>
+	<script type="text/javascript" src="ATC.js"></script>
+	<script type="text/javascript" src="pilot.js"></script>
 	</head>
 <body>
 
@@ -13,9 +13,7 @@
 		<td><b>Station </b></td>
 		<td><b>Request</b></td>
 		<td><b>Flight Rules</b></td>
-		<td><input type="submit" onclick="trafcon()" value = "Transmit Control"/></td>
 		<td><b>Emergency</b></td>
-		<td><input type="submit" onclick="pcon()" value = "Transmit Pilot"/></td>
 	</tr>
 	<form name="choice">
 	<tr>
@@ -34,7 +32,7 @@
 		<td>
 		<input type="radio" name="rules" value="VFR">VFR
 		</td>
-		<td><input type="submit" onclick="pcon()" value = "Transmit Pilot"/></td>
+		<td><input type="submit" onclick="pilot()" value = "Transmit Pilot"/></td>
 		<td>
 		<input type="radio" name="emergency" value="Engine">Engine Failure
 		</td>
