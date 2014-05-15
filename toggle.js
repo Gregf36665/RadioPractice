@@ -93,13 +93,15 @@ case "DOWNWIND":
 	din+="Request Down Wind for ";
 	break;
 }}
+alert(din); // this is for debugging to see what will get said
+
 var msg = new SpeechSynthesisUtterance();
 var voices = window.speechSynthesis.getVoices();
 msg.voice = voices[0]; // Note: some voices don't support altering params
 msg.voiceURI = 'native';
 msg.volume = 1; // 0 to 1
-msg.rate = 2; // 0.1 to 10
-msg.pitch = 2; //0 to 2
+msg.rate = 1; // 0.1 to 10
+msg.pitch = 1; //0 to 2
 msg.text = din;
 msg.lang = 'en-US';
 
