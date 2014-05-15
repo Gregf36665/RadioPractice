@@ -11,6 +11,7 @@
 		<td><b>Station </b></td>
 		<td><b>Request</b></td>
 		<td><b>Flight Rules</b></td>
+		<td><b>Emergency</b></td>
 		<td><input type="submit" onclick="fast()" value = "Transmit"/></td>
 	</tr>
 	<form name="choice">
@@ -30,6 +31,10 @@
 		<td>
 		<input type="radio" name="rules" value="VFR">VFR
 		</td>
+		
+		<td>
+		<input type="radio" name="emergency" value="Engine">Engine Failure
+		</td>
 	</tr>
 	<tr>
 		<td>
@@ -46,6 +51,10 @@
 		
 		<td>
 		<input type="radio" name="rules" value="IFR">IFR
+		</td>
+		
+		<td>
+		<input type="radio" name="emergency" value="RadioFail">Radio failure
 		</td>
 	</tr>
 	<tr>
@@ -76,7 +85,7 @@
 		<input type="radio" name="station" value="FlightWatch">Flight Watch
 		</td>
 		<td>
-		<input type="radio" name="request" value="Emergency">Emergency
+		<input type="radio" name="request" value="Message">Pass Message
 		</td>
 	</tr>
 	<tr>
