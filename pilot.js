@@ -9,7 +9,7 @@ var rules=false;
 var emergency=false;
 var out=[];
 var din="";
-var order=[1,0,2,3,0];
+var order=[1,0,2,3];
 
 //order
 /*  0 = callsign
