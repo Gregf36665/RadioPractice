@@ -33,7 +33,7 @@ for(var i=0;i<choice.station.length; i++){
 		out.push(choice.station[i].value);
 		station=true;
 		}
-	};
+	}
 
 for(var i=0;i<choice.request.length; i++){
 	if(choice.request[i].checked){
@@ -62,8 +62,134 @@ for(var i=0;i<choice.emergency.length; i++){
 out.push("SOS"); 	
 
 if(sign && station && request){
-	for(j=0;j<order.length;j++){
-		switch(out[order[j]].toUpperCase()){
+for(j=0;j<order.length;j++){
+var phon=function(phonetics){
+var io=0;
+var i=1;
+var letters=[];
+for(i=i;i<=phonetics.length;i++){
+        letters.push(phonetics.substring(io,i));
+        io=i;};
+for(k=0;k<letters.length;k++){
+switch(letters[k]){
+    case "A":
+        din+="Alpha ";
+        break;
+    case "B":
+        din+="Bravo ";
+        break;
+    case "C":
+        din+="Charlie ";
+        break;
+    case "D":
+        din+="Delta ";
+        break;
+    case "E":
+        din+="Echo ";
+        break;
+    case "F":
+        din+="Foxtrot ";
+        break;
+    case "G":
+        din+="Golf ";
+        break;
+    case "H":
+        din+="Hotel ";
+        break;
+    case "I":
+        din+="India ";
+        break;
+    case "J":
+        din+="Juliet ";
+        break;
+    case "K":
+        din+="Kilo ";
+        break;
+    case "L":
+        din+="Lee mah ";
+        break;
+    case "M":
+        din+="Mike ";
+        break;
+    case "N":
+        din+="November ";
+        break;
+    case "O":
+        din+="Oscar ";
+        break;
+    case "P":
+        din+="Papa ";
+        break;
+    case "Q":
+        din+="Quebec ";
+        break;
+    case "R":
+        din+="Romeo ";
+        break;
+    case "S":
+        din+="Sierra ";
+        break;
+    case "T":
+        din+="Tango ";
+        break;
+    case "U":
+        din+="Uniform ";
+        break;
+    case "V":
+        din+="Victor ";
+        break;
+    case "W":
+        din+="Whiskey ";
+        break;
+    case "X":
+        din+="X-ray ";
+        break;
+    case "Y":
+        din+="Yankee ";
+        break;
+    case "Z":
+        din+="Zulu ";
+        break;
+    case " ":
+        din+=".. ";
+        break;
+    case "0":
+        din+="Zero ";
+        break;
+    case "1":
+        din+="One ";
+        break;
+    case "2":
+        din+="Two ";
+        break;
+    case "3":
+        din+="Three ";
+        break;
+    case "4":
+        din+="Four ";
+        break;
+    case "5":
+        din+="Five ";
+        break;
+    case "6":
+        din+="Six ";
+        break;
+    case "7":
+        din+="Seven ";
+        break;
+    case "8":
+        din+="Eight ";
+        break;
+    case "9":
+        din+="Niner ";
+        break;
+    case ".":
+    	din+="Point "
+    default:
+    break;
+    }};
+};	
+switch(out[order[j]].toUpperCase()){
 		// emergencies
 			case "SOS":
 				din+="All other stations stand by ";
@@ -72,16 +198,18 @@ if(sign && station && request){
 				din+="Forced landing acknowledged";
 				break;
 			case "RADIOFAIL":
-				din+="Return to November 8 7 acknowledged";
+				din+="Return to";
+				phon("N87");
+				din+="acknowledged";
 				break;
 
 		// callsigns
 			case "N410T":
-				din+="November Four One Zero Tango ";
-				break;
+			phon("N410T");
+			break;
 			case "GBYFA":
-				din+="Golf Bravo Yankee Foxtrot Alpha ";
-				break;
+			phon("GBYFA");
+			break;
 
 		// stations
 			case "TOWER":

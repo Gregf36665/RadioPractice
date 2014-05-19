@@ -59,11 +59,141 @@ for(var i=0;i<choice.emergency.length; i++){
 		}
 	}if(!emergency) out.push("");
 
-out.push("SOS"); 	
+out.push("SOS"); 
+	
+
 
 if(sign && station && request){
-	for(j=0;j<order.length;j++){
-		switch(out[order[j]].toUpperCase()){
+for(j=0;j<order.length;j++){
+		
+		
+var phon=function(phonetics){
+var io=0;
+var i=1;
+var letters=[];
+for(i=i;i<=phonetics.length;i++){
+        letters.push(phonetics.substring(io,i));
+        io=i;};
+for(k=0;k<letters.length;k++){
+switch(letters[k]){
+    case "A":
+        din+="Alpha ";
+        break;
+    case "B":
+        din+="Bravo ";
+        break;
+    case "C":
+        din+="Charlie ";
+        break;
+    case "D":
+        din+="Delta ";
+        break;
+    case "E":
+        din+="Echo ";
+        break;
+    case "F":
+        din+="Foxtrot ";
+        break;
+    case "G":
+        din+="Golf ";
+        break;
+    case "H":
+        din+="Hotel ";
+        break;
+    case "I":
+        din+="India ";
+        break;
+    case "J":
+        din+="Juliet ";
+        break;
+    case "K":
+        din+="Kilo ";
+        break;
+    case "L":
+        din+="Lee mah ";
+        break;
+    case "M":
+        din+="Mike ";
+        break;
+    case "N":
+        din+="November ";
+        break;
+    case "O":
+        din+="Oscar ";
+        break;
+    case "P":
+        din+="Papa ";
+        break;
+    case "Q":
+        din+="Quebec ";
+        break;
+    case "R":
+        din+="Romeo ";
+        break;
+    case "S":
+        din+="Sierra ";
+        break;
+    case "T":
+        din+="Tango ";
+        break;
+    case "U":
+        din+="Uniform ";
+        break;
+    case "V":
+        din+="Victor ";
+        break;
+    case "W":
+        din+="Whiskey ";
+        break;
+    case "X":
+        din+="X-ray ";
+        break;
+    case "Y":
+        din+="Yankee ";
+        break;
+    case "Z":
+        din+="Zulu ";
+        break;
+    case " ":
+        din+=".. ";
+        break;
+    case "0":
+        din+="Zero ";
+        break;
+    case "1":
+        din+="One ";
+        break;
+    case "2":
+        din+="Two ";
+        break;
+    case "3":
+        din+="Three ";
+        break;
+    case "4":
+        din+="Four ";
+        break;
+    case "5":
+        din+="Five ";
+        break;
+    case "6":
+        din+="Six ";
+        break;
+    case "7":
+        din+="Seven ";
+        break;
+    case "8":
+        din+="Eight ";
+        break;
+    case "9":
+        din+="Niner ";
+        break;
+    case ".":
+    	din+="Point "
+    default:
+    break;
+    }};
+};			
+switch(out[order[j]].toUpperCase()){
 		// emergencies
 			case "SOS":
 				din+="mayday mayday mayday ";
@@ -72,15 +202,16 @@ if(sign && station && request){
 				din+="Engine failure commencing forced landing ";
 				break;
 			case "RADIOFAIL":
-				din+="Radio failure returning to November 8 7";
+				din+="Radio failure returning to"; 
+				phon('N87');
 				break;
 
 		// callsigns
 			case "N410T":
-				din+="November Four One Zero Tango ";
+				phon('N410T');
 				break;
 			case "GBYFA":
-				din+="Golf Bravo Yankee Foxtrot Alpha ";
+				phon('GBYFA');
 				break;
 
 		// stations
@@ -120,7 +251,8 @@ if(sign && station && request){
 				din+="Request Departure   ";
 				break;
 			case "FREQUENCYCHANGE":
-				din+="Request Frequency Change to Approach 1 1 niner point 2 7 5";
+				din+="Request Frequency Change to Approach"; 
+				phon("119.275");// 1 1 niner point 2 7 5";
 				order = []; // this stops anything else from being said
 				break;
 			case "FIRSTCONTACT":
@@ -128,7 +260,12 @@ if(sign && station && request){
 				order = []; // this stops anything else from being said
 				break;
 			case "PASSMESSAGE":
-				din+="is a Cessna Sky Hawk from Allentown to November 8 7 currently 1500 feet altimeter 2 niner niner 2 squawking 1 2 0 0 ";
+				din+="is a Cessna Sky Hawk from Allentown to" 
+				phon('N87');
+				din+="currently 1500 feet altimeter"; 
+				phon('2992');
+				din+="squawking"; 
+				phon("1200");
 				break;
 			case "REJOIN":
 				din+="Request Rejoin   ";
@@ -144,11 +281,13 @@ if(sign && station && request){
 				din+="Down Wind to land runway zero niner ";
 				break;
 			case "VFR":
-				din+="for VFR flight to Kilo Sierra Bravo Delta "; // we want to in the end
+				din+="for VFR flight to" 
+				phon("KSBD"); // we want to in the end
 				// replace this with a changing name such as another staton
 				break;
 			case "IFR":
-				din+="for IFR flight to Kilo Sierra Bravo Delta ";
+				din+="for IFR flight to" 
+				phon("KSBD");
 				break;
 			case "LOCAL":
 				din+="for local flight ";

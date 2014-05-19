@@ -8,12 +8,13 @@
 
 <table border="1">
 	<tr>
-		<td><b>Call sign</b></td>
-		<td><b>Station </b></td>
-		<td><b>Request</b></td>
-		<td><b>Flight Rules</b></td>
-		<td><b>Emergency</b></td>
+		<th><b>Call sign</b></th>
+		<th><b>Station </b></th>
+		<th><b>Request</b></th>
+		<th><b>Flight Rules</b></th>
+		<th><b>Emergency</b></th>
 		<td><input type="submit" onclick="pilot()" value = "Transmit Pilot"/></td>
+		<td><input type="submit" onclick="ATC()" value = "Transmit ATC"/></td>
 	</tr>
 	<form name="choice">
 	<tr>
@@ -28,7 +29,8 @@
 		<td>
 		<input type="radio" name="request" value="Taxi">Taxi
 		</td>
-
+		
+		
 		<td>
 		<input type="radio" name="rules" value="VFR">VFR
 		</td>
@@ -36,9 +38,8 @@
 		<td>
 		<input type="radio" name="emergency" value="Engine">Engine Failure
 		</td>
-
-		<td><input type="submit" onclick="ATC()" value = "Transmit ATC"/></td>
-
+		
+		
 	</tr>
 	<tr>
 		<td>
