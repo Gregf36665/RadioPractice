@@ -19,7 +19,7 @@ choice.emergency[x].checked=false}}
 };
 
 var randomcs=function(){
-var randcs=Math.floor((Math.random() * choice.callsign.length));
+var randcs=Math.floor((Math.random() * choice.callsign.length-1));
 choice.callsign[randcs].checked=true;
 };
 

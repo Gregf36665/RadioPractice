@@ -21,12 +21,19 @@ var order=[1,0,2,3];
 */
 
 
-for(var i=0;i<choice.callsign.length; i++){
+for(var i=0;i<choice.callsign.length-1; i++){
     if(choice.callsign[i].checked){
 		out.push(choice.callsign[i].value);
-		sign=true;
-		}
-	}if(!sign) alert("You need a callsign!");
+		alert("chosen");
+		sign=true;}
+	}
+	if(choice.callsign[choice.callsign.length-1].checked){
+		var mycs=choice.customcs.value.toUpperCase()
+		out.push("CUSTOM");
+		sign=true;}
+
+if(!sign) alert("You need a callsign!");
+	
 
 for(var i=0;i<choice.station.length; i++){
 	if(choice.station[i].checked){
@@ -207,6 +214,9 @@ switch(out[order[j]].toUpperCase()){
 				break;
 
 		// callsigns
+			case "CUSTOM":
+				phon(mycs);
+				break;
 			case "N410T":
 				phon('N410T');
 				break;
