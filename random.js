@@ -42,3 +42,12 @@ var randomem=function(){
 var emergen=Math.floor((Math.random() * choice.emergency.length));
 choice.emergency[emergen].checked=true;
 };
+
+var reset=function(){
+for(var i=0;i<choice.callsign.length; i++)choice.callsign[i].checked=false;
+for(var i=0;i<choice.station.length; i++)choice.station[i].checked=false;
+for(var i=0;i<choice.request.length; i++)choice.request[i].checked=false;
+for(var i=0;i<choice.rules.length; i++)choice.rules[i].checked=false;
+for(var i=0;i<choice.emergency.length; i++)choice.emergency[i].checked=false;
+choice.customcs.value="";
+}
