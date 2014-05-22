@@ -24,7 +24,6 @@ var order=[1,0,2,3];
 for(var i=0;i<choice.callsign.length-1; i++){
     if(choice.callsign[i].checked){
 		out.push(choice.callsign[i].value);
-		alert("chosen");
 		sign=true;}
 	}
 	if(choice.callsign[choice.callsign.length-1].checked){
