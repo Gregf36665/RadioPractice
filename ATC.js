@@ -243,7 +243,7 @@ switch(out[order[j]].toUpperCase()){
 			case "CENTER":
 				din+="Allentown Center   ";
 				break;
-			case "DEPARTURESTATION":
+			case "DEPARTURES":
 				din+="Allentown Departure   ";
 				break;
 
@@ -261,7 +261,7 @@ switch(out[order[j]].toUpperCase()){
 				din+="Pass your message ";
 				break;
 			case "EMERGENCY":
-				din+="mayday mayday mayday";
+				din+="mayday mayday mayday ";
 				break;
 			case "REJOIN":
 				din+=" is using runway 2 4 left hand circuit\
@@ -293,6 +293,6 @@ msg.text = din;
 msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
-else {alert("You didn't select them all");}
+else if(sign){alert("You didn't select them all");}
 
 };

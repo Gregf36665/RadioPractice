@@ -208,7 +208,7 @@ switch(out[order[j]].toUpperCase()){
 				din+="Engine failure commencing forced landing ";
 				break;
 			case "RADIOFAIL":
-				din+="Radio failure returning to"; 
+				din+="Radio failure returning to "; 
 				phon('N87');
 				break;
 
@@ -248,7 +248,7 @@ switch(out[order[j]].toUpperCase()){
 			case "CENTER":
 				din+="Allentown Center   ";
 				break;
-			case "DEPARTURESTATION":
+			case "DEPARTURES":
 				din+="Allentown Departure   ";
 				break;
 
@@ -256,11 +256,11 @@ switch(out[order[j]].toUpperCase()){
 			case "TAXI":
 				din+="Request Taxi   ";
 				break;
-			case "DEPARTUREREQUEST":
+			case "DEPARTURER":
 				din+="Request Departure   ";
 				break;
 			case "FREQUENCYCHANGE":
-				din+="Request Frequency Change to Approach"; 
+				din+="Request Frequency Change to Approach "; 
 				phon("119.275");// 1 1 niner point 2 7 5";
 				order = []; // this stops anything else from being said
 				break;
@@ -269,7 +269,7 @@ switch(out[order[j]].toUpperCase()){
 				order = []; // this stops anything else from being said
 				break;
 			case "PASSMESSAGE":
-				din+="is a Cessna Sky Hawk from Allentown to" 
+				din+="is a Cessna Sky Hawk from Allentown to " 
 				phon('N87');
 				din+="currently 1500 feet altimeter"; 
 				phon('2992');
@@ -290,12 +290,12 @@ switch(out[order[j]].toUpperCase()){
 				din+="Down Wind to land runway zero niner ";
 				break;
 			case "VFR":
-				din+="for VFR flight to" 
+				din+="for VFR flight to " 
 				phon("KSBD"); // we want to in the end
 				// replace this with a changing name such as another staton
 				break;
 			case "IFR":
-				din+="for IFR flight to" 
+				din+="for IFR flight to " 
 				phon("KSBD");
 				break;
 			case "LOCAL":
@@ -317,6 +317,6 @@ msg.text = din;
 msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
-else {alert("You didn't select them all");}
+else if(sign) {alert("You didn't select them all");}
 
 };
