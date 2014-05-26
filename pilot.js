@@ -22,21 +22,20 @@ var order=[2,0,1,3,4];//[1,0,2,3];
 	6 = Mayday Mayday Mayday
 */
 
-if(choice.planemake.checked && choice.custommake.value!=""){
+if(choice.custommake.value!=""){
 		var mypm=choice.custommake.value.toLowerCase();
 		out.push("CUSTOMPM");
 		make=true;}
-
-if(choice.custommake.value==""){alert("You need a Plane Make!");
+else
+{alert("You need a Plane Make!");
 return;}
 
-if(choice.tailnumber.checked && choice.customtn.value!=""){
+if(choice.customtn.value!=""){
 		var mycs=choice.customtn.value.toUpperCase()
 		out.push("CUSTOM");
 		tail=true;}
-
-if(choice.customtn.value==""){ 
-alert("You need a tailnumber!");
+else
+{alert("You need a tailnumber!");
 return;}	
 
 for(var i=0;i<choice.station.length; i++){
@@ -320,6 +319,8 @@ msg.text = din;
 msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
-else if(tail && make) {alert("You didn't select them all");}
+else if(tail && make)
+{random();
+pilot();}
 
 };
