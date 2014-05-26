@@ -8,10 +8,14 @@
 <body>
 <table border="1">
 	<th colspan="2">Aviation Radio Practice</th>
+	<script>
+	checking();
+	</script>
 	<tr>
 	<td><table border="1">
 	<tr>
-		<th><b>Call sign</b></th>
+		<th><b>Make</b></th>
+		<th><b>Tail Number</b></th>
 		<th><b>Station </b></th>
 		<th><b>Request</b></th>
 		<th><b>Flight Rules</b></th>
@@ -20,7 +24,12 @@
 	<form name="choice">
 	<tr>
 		<td>
-		<input type="radio" name="callsign" value="N410T">N410T
+			<input type="radio" name="planemake" value="Custommake" checked="true">
+			<input type="text" name="custommake" placeholder="Make" value="">
+		</td>
+		<td>
+			<input type="radio" name="tailnumber" value="Custom" checked="true">
+			<input type="text" name="customtn" placeholder="Tail Number" value="">
 		</td>
 
 		<td>
@@ -43,10 +52,8 @@
 		
 	</tr>
 	<tr>
-		<td>
-		<input type="radio" name="callsign" value="GBYFA">GBYFA
-		</td>
-
+		<td></td>
+		<td></td>
 		<td>
 		<input type="radio" name="station" value="Approach">Approach
 		</td>
@@ -64,10 +71,8 @@
 
 	</tr>
 	<tr>
-		<td>
-			<input type="radio" name="callsign" value="Custom">
-			<input type="text" name="customcs" placeholder="Custom" >
-		</td>
+		<td></td>
+		<td></td>
 		<td>
 		<input type="radio" name="station" value="Unicom">Unicom
 		</td>
@@ -82,6 +87,7 @@
 	</tr>
 	<tr>
 		<td></td>
+		<td></td>
 		<td>
 		<input type="radio" name="station" value="Radio">Radio
 		</td>
@@ -92,6 +98,7 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="FlightWatch">Flight Watch
@@ -104,6 +111,7 @@
 	</tr>
 	<tr>
 		<td></td>
+		<td></td>
 		<td>
 		<input type="radio" name="station" value="ClearanceDelivery">Clearance Delivery
 		</td>
@@ -114,6 +122,7 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="Ground">Ground
@@ -126,6 +135,7 @@
 	</tr>
 	<tr>
 		<td></td>
+		<td></td>
 		<td>
 		<input type="radio" name="station" value="Center">Center
 		</td>
@@ -136,6 +146,7 @@
 		<td></td>
 	</tr>
 	<tr>
+		<td></td>
 		<td></td>
 		<td>
 		<input type="radio" name="station" value="Departures">Departure
@@ -148,7 +159,8 @@
 	</tr>
 	</form>
 	<tr>
-		<th><input type="submit" onclick="randomcs()" value = "Random"/></th>
+		<td></td>
+		<td></td>		
 		<th><input type="submit" onclick="randomst()" value = "Random"/></th>
 		<th><input type="submit" onclick="randomre()" value = "Random"/></th>
 		<th><input type="submit" onclick="randomru()" value = "Random"/></th>

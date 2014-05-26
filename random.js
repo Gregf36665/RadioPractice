@@ -3,24 +3,17 @@ var choice = document.choice; //simplify the code
 var emer=Math.random();
 
 if(emer<0.1){
-randomcs();
 randomst();
 randomre();
 randomru();
 randomem();
 }
 else{
-randomcs();
 randomst();
 randomre();
 randomru();
 for(var x in choice.emergency){
 choice.emergency[x].checked=false}}
-};
-
-var randomcs=function(){
-var randcs=Math.floor((Math.random() * choice.callsign.length-1));
-choice.callsign[randcs].checked=true;
 };
 
 var randomst=function(){
@@ -44,10 +37,11 @@ choice.emergency[emergen].checked=true;
 };
 
 var reset=function(){
-for(var i=0;i<choice.callsign.length; i++)choice.callsign[i].checked=false;
 for(var i=0;i<choice.station.length; i++)choice.station[i].checked=false;
 for(var i=0;i<choice.request.length; i++)choice.request[i].checked=false;
 for(var i=0;i<choice.rules.length; i++)choice.rules[i].checked=false;
 for(var i=0;i<choice.emergency.length; i++)choice.emergency[i].checked=false;
-choice.customcs.value="";
+choice.customtn.value="";
+choice.custommake.value="";
+
 }

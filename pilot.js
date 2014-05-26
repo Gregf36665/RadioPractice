@@ -2,17 +2,18 @@ var pilot=function(){
 
 var selected=true;
 var choice = document.choice; //simplify the code
-var sign=false;
+var tail=false;
+var make=false;
 var station=false;
 var request=false;
 var rules=false;
 var emergency=false;
 var out=[];
 var din="";
-var order=[1,0,2,3];
+var order=[2,0,1,3,4];//[1,0,2,3];
 
 //order
-/*  0 = callsign
+/*  0 = tailnumber
 	1 = station
 	2 = request
 	3 = flight rules
@@ -20,18 +21,19 @@ var order=[1,0,2,3];
 	5 = Mayday Mayday Mayday
 */
 
+if(choice.planemake.checked){
+		var mypm=choice.custommake.value.toLowerCase();
+		out.push("CUSTOMPM");
+		make=true;}
 
-for(var i=0;i<choice.callsign.length-1; i++){
-    if(choice.callsign[i].checked){
-		out.push(choice.callsign[i].value);
-		sign=true;}
-	}
-	if(choice.callsign[choice.callsign.length-1].checked){
-		var mycs=choice.customcs.value.toUpperCase()
+if(!make) alert("You need a Plane Make!");
+
+if(choice.tailnumber.checked){
+		var mycs=choice.customtn.value.toUpperCase()
 		out.push("CUSTOM");
-		sign=true;}
+		tail=true;}
 
-if(!sign) alert("You need a callsign!");
+if(!tail) alert("You need a tailnumber!");
 	
 
 for(var i=0;i<choice.station.length; i++){
@@ -69,7 +71,7 @@ out.push("SOS");
 	
 
 
-if(sign && station && request){
+if(tail && station && request){
 for(j=0;j<order.length;j++){
 		
 		
@@ -212,15 +214,13 @@ switch(out[order[j]].toUpperCase()){
 				phon('N87');
 				break;
 
-		// callsigns
+		//makes
+			case "CUSTOMPM":
+				din+=mypm;
+				break;
+		// tailnumbers
 			case "CUSTOM":
 				phon(mycs);
-				break;
-			case "N410T":
-				phon('N410T');
-				break;
-			case "GBYFA":
-				phon('GBYFA');
 				break;
 
 		// stations
@@ -317,6 +317,6 @@ msg.text = din;
 msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
-else if(sign) {alert("You didn't select them all");}
+else if(tail) {alert("You didn't select them all");}
 
 };
