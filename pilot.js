@@ -66,7 +66,7 @@ for(var i=0;i<choice.emergency.length; i++){
 		out.push(choice.emergency[i].value);
 		emergency=true;
 		request = true; // emergencies count as requests
-		order = [5,1,0,4];
+		order = [6,2,0,1,5];
 		}
 	}if(!emergency) out.push("");
 
@@ -219,7 +219,7 @@ switch(out[order[j]].toUpperCase()){
 
 		//makes
 			case "CUSTOMPM":
-				din+=mypm;
+				din+=mypm + " ";
 				break;
 		// tailnumbers
 			case "CUSTOM":
