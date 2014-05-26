@@ -13,28 +13,31 @@ var din="";
 var order=[2,0,1,3,4];//[1,0,2,3];
 
 //order
-/*  0 = tailnumber
-	1 = station
-	2 = request
-	3 = flight rules
-	4 = nature of emergency
-	5 = Mayday Mayday Mayday
+/*  0 = make
+	1 = tailnumber
+	2 = station
+	3 = request
+	4 = flight rules
+	5 = nature of emergency
+	6 = Mayday Mayday Mayday
 */
 
-if(choice.planemake.checked){
+if(choice.planemake.checked && choice.custommake.value!=""){
 		var mypm=choice.custommake.value.toLowerCase();
 		out.push("CUSTOMPM");
 		make=true;}
 
-if(!make) alert("You need a Plane Make!");
+if(choice.custommake.value==""){alert("You need a Plane Make!");
+return;}
 
-if(choice.tailnumber.checked){
+if(choice.tailnumber.checked && choice.customtn.value!=""){
 		var mycs=choice.customtn.value.toUpperCase()
 		out.push("CUSTOM");
 		tail=true;}
 
-if(!tail) alert("You need a tailnumber!");
-	
+if(choice.customtn.value==""){ 
+alert("You need a tailnumber!");
+return;}	
 
 for(var i=0;i<choice.station.length; i++){
 	if(choice.station[i].checked){
@@ -317,6 +320,6 @@ msg.text = din;
 msg.lang = 'en-US';
 
 speechSynthesis.speak(msg);}
-else if(tail) {alert("You didn't select them all");}
+else if(tail && make) {alert("You didn't select them all");}
 
 };

@@ -12,12 +12,13 @@ var din="";
 var order=[0,1,2,3,4];//[0,1,2,3];
 
 //order
-/*  0 = tailnumber
-	1 = station
-	2 = request
-	3 = flight rules
-	4 = nature of emergency
-	5 = Mayday Mayday Mayday
+/*  0 = make
+	1 = tailnumber
+	2 = station
+	3 = request
+	4 = flight rules
+	5 = nature of emergency
+	6 = Mayday Mayday Maydays
 */
 
 if(choice.planemake.checked){
