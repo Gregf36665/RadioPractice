@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script type="text/javascript" src="random2.js"></script>
+	<script type="text/javascript" src="ATC2.js"></script>
+	<script type="text/javascript" src="pilot2.js"></script>
+	</head>
+<body>
+<table border="1">
+	<th colspan="2">Aviation Radio Practice</th>
+	<tr>
+	<td><table border="1">
+	<tr>
+		<th><b>Make</b></th>
+		<th><b>Tail Number</b></th>
+		<th><b>Station </b></th>
+		<th><b>Request</b></th>
+		<th><b>Flight Rules</b></th>
+		<th  style="background-color:red"><b>Emergency</b></th>
+	</tr>
+	<form name="choice">
+	<tr>
+		<td>
+			<input type="text" name="custommake" placeholder="Make" value="">
+		</td>
+		<td>
+			<input type="text" name="customtn" placeholder="Tail Number" value="">
+		</td>
+		<td>
+		<select name="station">
+		<option value="tower">Tower</option>
+		<option value="approach">Approach</option>
+		<option value="unicom">Unicom</option>
+		<option value="Radio">Radio</option>
+		<option value="Flightwatch">Flight Watch</option>
+		<option value="ClearanceDelivery">Clearance Delivery</option>
+		<option value="Ground">Ground</option>
+		<option value="Center">Center</option>
+		<option value="Departures">Departure</option>
+		</select>
+		</td>
+		<td>
+		<select name="request">
+		<option value="Taxi">Taxi</option>
+		<option value="DepartureR">Departure</option>
+		<option value="FrequencyChange">Frequency Change</option>
+		<option value="FirstContact">First Contact</option>
+		<option value="PassMessage">Pass Message</option>
+		<option value="Rejoin">Rejoin</option>
+		<option value="Finals">Finals</option>
+		<option value="Base">Base</option>
+		<option value="Downwind">Downwind</option>
+		</select>
+		</td>
+		<td>
+		<select name="rules">
+		<option value="norules">None</option>
+		<option value="vfr">VFR</option>
+		<option value="ifr">IFR</option>
+		<option value="localflight">Local Flight</option>
+		</select>
+		</td>
+		<td style="background-color:red">
+		<select>
+		<option value="noemergency">None</option>
+		<option value="engine">Engine Failure</option>
+		<option value="radiofail">Radio Failure</option>
+		</select>
+		</td>
+	</form>
+	</table>
+	</td>
+	<td><table border="1">
+		<th>Transmissions</th>
+		<tr>
+		<td><input type="submit" onclick="pilot()" value = "Transmit Pilot"/></td>
+		</tr>
+		<tr>
+		<td><input type="submit" onclick="ATC()" value = "Transmit ATC"/></td>
+		</tr>
+		<th><input type="submit" onclick="reset()" value = "Reset"/></th>
+		<tr>
+		<th><input type="submit" onclick="random()" value = "Random"/></th>
+		</tr>
+	</table></td>
+</table>
+</body>
+</html>
